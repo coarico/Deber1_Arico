@@ -1,9 +1,0 @@
-FROM mcr.microsoft.com/mssql/server:2019-CU18-ubuntu-20.04
-
-USER root
-RUN apt-get update && \
-    apt-get install -y mssql-tools unixodbc-dev && \
-    rm -rf /var/lib/apt/lists/*
-USER mssql
-
-CMD ["/opt/mssql/bin/sqlservr"]
